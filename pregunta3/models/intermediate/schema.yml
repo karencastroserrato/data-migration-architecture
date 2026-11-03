@@ -1,0 +1,27 @@
+# Documenta cada modelo en intermediate.
+# Define controles de calidad automáticos sobre ellos. Controla que no existan polizas duplicadas, revisando la combinación de 
+# País + ID de poliza
+
+version: 2
+
+models:
+  - name: int_latam_policies
+    description: >
+      All LATAM countries combined into one policies dataset. policy_id is
+      only guaranteed unique within each country's own sequence, not across
+      countries - so the real uniqueness check here is on the
+      (country_code, policy_id) pair, not policy_id alone.
+    columns:
+      - name: policy_id
+        tests:
+          - not_null
+      - name: country_code
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['PER', 'CHL', 'COL']
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - country_code
+            - policy_id

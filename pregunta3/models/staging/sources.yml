@@ -1,0 +1,26 @@
+# Este archivo define las direcciones de las tablas de origen en Snowflake (una por pais: Perú, Chile, Colombia) 
+# Indica donde debe encontrar cada tabla cruda para que los modelos de staging la referencien.  
+
+version: 2
+
+sources:
+  - name: raw_peru
+    description: Raw policy data coming from Peru.
+    schema: RAW_PERU
+    tables:
+      - name: policies
+        description: Peru policies, as they arrive in Snowflake, untransformed.
+
+  - name: raw_chile
+    description: Raw policy data coming from Chile.
+    schema: RAW_CHILE
+    tables:
+      - name: policies
+        description: Chile policies, as they arrive in Snowflake, untransformed.
+
+  - name: raw_colombia
+    description: Raw policy data coming from Colombia.
+    schema: RAW_COLOMBIA
+    tables:
+      - name: policies
+        description: Colombia policies, as they arrive in Snowflake, untransformed.

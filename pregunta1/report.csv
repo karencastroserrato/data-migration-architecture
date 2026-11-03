@@ -1,0 +1,7 @@
+rule_name,client_id,client_name,document_type,document_number,country_code,email,phone,birthdate,status,created_date,Unnamed: 0,policy_id,policy_number,premium,currency,start_date,end_date
+DuplicateRule,8a17f83d-6b67-433f-ae79-6ad0823bb348,Miguel Vargas,RUT,966030828,PER,miguel.vargas@example.com,62281389.0,1977-06-11,ACTIVE,2019-12-29,,,,,,,
+DuplicateRule,9ad3db92-fc35-44ed-9db4-a5d1421cff2c,Miguel Vargas,RUT,966030828,PER,miguel.vargas@example.com,24698498.0,1960-12-30,ACTIVE,2019-12-29,,,,,,,
+FormatRule,73dd490c-d769-457f-82e7-54ac4edd0593,Jessica Dávila,RUT,78301,PER,jessica.davilaexample.com,7010001.0,1999-11-18,ACTIVE,2019-08-16,,,,,,,
+FormatRule,b2f2d04e-cc59-43d1-b842-a20648ed8142,Elmer Sarmiento,RUT,511377447,PER,@example.com,7010001.0,1975-09-15,ACTIVE,2016-03-30,,,,,,,
+FormatRule,d7974b60-122f-48f3-b64e-636bfd9d4217,Noelia Bustamante,RUT,927032600,PER,@example.com,7010001.0,1970-01-08,ACTIVE,2022-04-29,,,,,,,
+ReferentialIntegrityRule,e88f1410-f52f-47fb-96bb-41751a1f5cd1,,,,,,,,ACTIVE,,7.0,POL-000008,PN-00000008,5542.11,USD,2030-04-15,2035-01-08

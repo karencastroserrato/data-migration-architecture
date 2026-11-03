@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+
+# Documentos de datos
+accounts.csv
+legacy_policies.csv
+target_policies.csv
+GallagherMigrationTest.docx

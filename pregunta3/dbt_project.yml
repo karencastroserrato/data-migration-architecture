@@ -1,0 +1,20 @@
+# Declara nombre y versión del proyecto, y define cómo se materializa cada modelo: staging e intermediate y para marts
+# queda como tabla física en el esquema analytics. Se configura esto una sola vez, en vez de repetirlo en cada modelo.
+
+name: 'gallagher_latam_policies'
+version: '1.0.0'
+config-version: 2
+
+profile: 'gallagher_latam_policies'
+
+model-paths: ["models"]
+
+models:
+  gallagher_latam_policies:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+      +schema: analytics

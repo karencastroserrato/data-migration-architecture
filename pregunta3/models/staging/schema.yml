@@ -1,0 +1,53 @@
+# Documenta cada modelo de staging (Perú, Chile, Colombia). 
+# Define controles de calidad automáticos sobre ellos. Hace validaciones sobre los datos.
+
+version: 2
+
+models:
+  - name: stg_peru_policies
+    description: Standardized Peru policies, one row per source record.
+    columns:
+      - name: policy_id
+        description: Policy identifier, unique within Peru's own sequence.
+        tests:
+          - not_null
+          - unique
+      - name: client_id
+        tests:
+          - not_null
+      - name: country_code
+        tests:
+          - accepted_values:
+              values: ['PER']
+
+  - name: stg_chile_policies
+    description: Standardized Chile policies, one row per source record.
+    columns:
+      - name: policy_id
+        description: Policy identifier, unique within Chile's own sequence.
+        tests:
+          - not_null
+          - unique
+      - name: client_id
+        tests:
+          - not_null
+      - name: country_code
+        tests:
+          - accepted_values:
+              values: ['CHL']
+
+  - name: stg_colombia_policies
+    description: Standardized Colombia policies, one row per source record.
+    columns:
+      - name: policy_id
+        description: Policy identifier, unique within Colombia's own sequence.
+        tests:
+          - not_null
+          - unique
+      - name: client_id
+        tests:
+          - not_null
+      - name: country_code
+        tests:
+          - accepted_values:
+              values: ['COL']

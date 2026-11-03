@@ -1,0 +1,26 @@
+# Documenta la tabla final y le pone los controles de calidad más estrictos, porque es lo que usara el negocio. 
+# Se mantiene validación de: País + ID, para evaluar duplicados
+
+version: 2
+
+models:
+  - name: fact_policy
+    description: Final LATAM policy fact table, consumed by OneSource and downstream reporting.
+    columns:
+      - name: policy_id
+        tests:
+          - not_null
+      - name: country_code
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['PER', 'CHL', 'COL']
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['ACTIVE', 'INACTIVE']
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - country_code
+            - policy_id
